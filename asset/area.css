@@ -1,0 +1,795 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #172b4d;
+
+    padding: 25px 16px;
+
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+
+    padding: 5px 10px 30px;
+}
+
+.admin {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    background: rgba(255,255,255,.08);
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,.12);
+
+    border-radius: 50%;
+}
+
+.admin strong {
+    display: block;
+    font-size: 14px;
+}
+
+.admin small {
+    color: #b8c4d6;
+    font-size: 11px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav a {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    margin-bottom: 5px;
+
+    border-radius: 8px;
+
+    color: #dbe4f0;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,.08);
+}
+
+nav a.active {
+    background: #2f80ed;
+    color: white;
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout {
+    position: absolute;
+
+    bottom: 25px;
+    left: 16px;
+    right: 16px;
+
+    padding: 13px;
+
+    color: #dbe4f0;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+}
+
+.logout:hover {
+    background: rgba(255,255,255,.08);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    margin-left: 240px;
+
+    padding: 32px 38px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+.header h1 {
+    font-size: 27px;
+
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: #8993a4;
+
+    font-size: 14px;
+}
+
+.profile {
+    background: white;
+
+    padding: 11px 17px;
+
+    border-radius: 9px;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,.05);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 26px;
+
+    border: 1px solid #edf0f5;
+
+    box-shadow: 0 4px 18px rgba(23,43,77,.05);
+}
+
+.card-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #edf0f5;
+}
+
+.card-header h2 {
+    font-size: 19px;
+
+    margin-bottom: 5px;
+}
+
+.card-header p {
+    color: #8b95a5;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   BUTTON TAMBAH
+========================= */
+
+.btn-add {
+    background: #2f80ed;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 11px 17px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: .2s;
+}
+
+.btn-add:hover {
+    background: #216bd0;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+.search input {
+    width: 350px;
+
+    padding: 11px 14px;
+
+    border: 1px solid #e1e5eb;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+.search input:focus {
+    border-color: #2f80ed;
+
+    box-shadow: 0 0 0 3px rgba(47,128,237,.10);
+}
+
+.search button {
+    border: none;
+
+    background: #172b4d;
+
+    color: white;
+
+    padding: 0 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.search button:hover {
+    background: #243d65;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f7f9fc;
+}
+
+th {
+    padding: 14px;
+
+    text-align: left;
+
+    color: #667085;
+
+    font-size: 12px;
+
+    border-bottom: 1px solid #e8edf3;
+}
+
+td {
+    padding: 16px 14px;
+
+    border-bottom: 1px solid #edf0f4;
+
+    font-size: 13px;
+}
+
+tbody tr:hover {
+    background: #fafcff;
+}
+
+
+/* =========================
+   NAMA AREA
+========================= */
+
+.area-name {
+    font-weight: bold;
+
+    color: #243b64;
+}
+
+
+/* =========================
+   TERSEDIA
+========================= */
+
+.available {
+    font-weight: bold;
+
+    color: #2f80ed;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+.status.tersedia {
+    color: #16834d;
+
+    background: #e6f7ed;
+}
+
+.status.hampir {
+    color: #c47a00;
+
+    background: #fff3d9;
+}
+
+.status.penuh {
+    color: #d64545;
+
+    background: #fff0f0;
+}
+
+
+/* =========================
+   AKSI
+========================= */
+
+.edit,
+.delete {
+    display: inline-block;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    padding: 7px 11px;
+
+    border-radius: 6px;
+
+    transition: .2s;
+}
+
+.edit {
+    color: #2f6fed;
+
+    background: #edf4ff;
+}
+
+.delete {
+    color: #d64545;
+
+    background: #fff0f0;
+
+    margin-left: 5px;
+}
+
+.edit:hover {
+    background: #dfeaff;
+}
+
+.delete:hover {
+    background: #ffe1e1;
+}
+
+
+/* =========================
+   EMPTY DATA
+========================= */
+
+.empty {
+    text-align: center;
+
+    padding: 35px;
+
+    color: #8993a4;
+}
+
+
+/* =========================
+   FORM EDIT AREA
+========================= */
+
+form {
+    max-width: 650px;
+
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #dfe5ee;
+
+    border-radius: 9px;
+
+    background: #fff;
+
+    color: #1f2937;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2f80ed;
+
+    box-shadow: 0 0 0 3px rgba(47,128,237,.12);
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #b9c5d6;
+}
+
+
+/* =========================
+   INFO FORM
+========================= */
+
+.form-info {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #8993a4;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   FORM ACTION
+========================= */
+
+.form-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #edf0f5;
+}
+
+
+/* =========================
+   BUTTON SIMPAN
+========================= */
+
+.btn-save {
+    border: none;
+
+    padding: 12px 20px;
+
+    background: #2f80ed;
+
+    color: white;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.btn-save:hover {
+    background: #1f6fd1;
+}
+
+.btn-save:active {
+    transform: scale(.98);
+}
+
+
+/* =========================
+   BUTTON BATAL
+========================= */
+
+.btn-cancel {
+    padding: 12px 20px;
+
+    background: #f1f3f6;
+
+    color: #4b5563;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.btn-cancel:hover {
+    background: #e5e7eb;
+}
+
+
+/* =========================
+   PESAN ERROR
+========================= */
+
+.alert-error {
+    max-width: 650px;
+
+    margin-bottom: 20px;
+
+    padding: 12px 15px;
+
+    background: #fff0f0;
+
+    color: #d64545;
+
+    border: 1px solid #ffd2d2;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main {
+        margin-left: 210px;
+
+        padding: 25px;
+    }
+
+    .search input {
+        width: 250px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+    }
+
+    .logout {
+        position: relative;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: block;
+
+        margin-top: 20px;
+    }
+
+    .main {
+        margin-left: 0;
+
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .card-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .search {
+        flex-direction: column;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+    .search button {
+        height: 40px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn-save,
+    .btn-cancel {
+        text-align: center;
+
+        width: 100%;
+    }
+
+}
+
+/* =========================
+   STATUS NONAKTIF
+========================= */
+
+.status.nonaktif {
+    color: #4b5563;
+    background: #e5e7eb;
+}
+
+/* =========================
+   TOMBOL AKSI AREA
+========================= */
+
+.aksi {
+    white-space: nowrap;
+}
+
+.aksi .edit,
+.aksi .delete {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 7px 11px;
+    border-radius: 6px;
+    margin: 3px 2px;
+    transition: 0.2s;
+}
+
+/* Tombol Edit dan Aktifkan Kembali */
+.aksi .edit {
+    color: #2f6fed;
+    background: #edf4ff;
+}
+
+.aksi .edit:hover {
+    background: #dfeaff;
+}
+
+/* Tombol Nonaktifkan */
+.aksi .delete {
+    color: #d64545;
+    background: #fff0f0;
+}
+
+.aksi .delete:hover {
+    background: #ffe1e1;
+}
+
+/* =========================
+   RESPONSIVE TABEL
+========================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.aksi a {
+    white-space: nowrap;
+}
