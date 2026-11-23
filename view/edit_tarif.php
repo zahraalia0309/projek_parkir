@@ -40,14 +40,18 @@ if (isset($_POST['update'])) {
         $_POST['jenis_kendaraan']
     );
 
-    $tarif_per_jam = intval($_POST['tarif_per_jam']);
+    $tarif_per_jam      = intval($_POST['tarif_per_jam']);
+    $tarif_lebih_10_jam = intval($_POST['tarif_lebih_10_jam']);
+    $tarif_24_jam       = intval($_POST['tarif_24_jam']);
 
     $update = mysqli_query(
         $conn,
         "
         UPDATE tb_tarif SET
             jenis_kendaraan = '$jenis_kendaraan',
-            tarif_per_jam = '$tarif_per_jam'
+            tarif_per_jam = '$tarif_per_jam',
+            tarif_lebih_10_jam = '$tarif_lebih_10_jam',
+            tarif_24_jam = '$tarif_24_jam'
         WHERE id_tarif = $id_tarif
         "
     );
@@ -406,7 +410,51 @@ if (isset($_POST['update'])) {
                     name="tarif_per_jam"
                     id="tarif_per_jam"
                     value="<?= htmlspecialchars($tarif['tarif_per_jam']); ?>"
-                    placeholder="Contoh: 3000"
+                    placeholder="Contoh: 2000"
+                    min="0"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- TARIF LEBIH DARI 10 JAM -->
+
+            <div class="form-group">
+
+                <label for="tarif_lebih_10_jam">
+                    Tarif Lebih dari 10 Jam (flat)
+                </label>
+
+                <input
+                    type="number"
+                    name="tarif_lebih_10_jam"
+                    id="tarif_lebih_10_jam"
+                    value="<?= htmlspecialchars($tarif['tarif_lebih_10_jam'] ?? 0); ?>"
+                    placeholder="Contoh: 15000"
+                    min="0"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- TARIF 24 JAM -->
+
+            <div class="form-group">
+
+                <label for="tarif_24_jam">
+                    Tarif per 24 Jam
+                </label>
+
+                <input
+                    type="number"
+                    name="tarif_24_jam"
+                    id="tarif_24_jam"
+                    value="<?= htmlspecialchars($tarif['tarif_24_jam'] ?? 0); ?>"
+                    placeholder="Contoh: 25000"
                     min="0"
                     required
                 >

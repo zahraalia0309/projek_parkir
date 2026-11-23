@@ -44,4 +44,3 @@ function catatAktivitas($conn, $aktivitas, $id_user = null)
 }
 
 ?>
-```

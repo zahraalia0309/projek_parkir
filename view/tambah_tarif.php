@@ -9,14 +9,16 @@ if (isset($_POST['simpan'])) {
         $_POST['jenis_kendaraan']
     );
 
-    $tarif_per_jam = intval($_POST['tarif_per_jam']);
+    $tarif_per_jam      = intval($_POST['tarif_per_jam']);
+    $tarif_lebih_10_jam = intval($_POST['tarif_lebih_10_jam']);
+    $tarif_24_jam       = intval($_POST['tarif_24_jam']);
 
     /* INSERT DATA */
     $query = mysqli_query($conn, "
         INSERT INTO tb_tarif
-        (jenis_kendaraan, tarif_per_jam)
+        (jenis_kendaraan, tarif_per_jam, tarif_lebih_10_jam, tarif_24_jam)
         VALUES
-        ('$jenis_kendaraan', '$tarif_per_jam')
+        ('$jenis_kendaraan', '$tarif_per_jam', '$tarif_lebih_10_jam', '$tarif_24_jam')
     ");
 
     if ($query) {
@@ -265,7 +267,7 @@ if (isset($_POST['simpan'])) {
             </div>
 
 
-            <!-- TARIF -->
+            <!-- TARIF PER JAM -->
 
             <div class="form-group">
 
@@ -276,7 +278,45 @@ if (isset($_POST['simpan'])) {
                 <input
                     type="number"
                     name="tarif_per_jam"
-                    placeholder="Contoh: 3000"
+                    placeholder="Contoh: 2000"
+                    min="0"
+                    required
+                >
+
+            </div>
+
+
+            <!-- TARIF LEBIH DARI 10 JAM -->
+
+            <div class="form-group">
+
+                <label>
+                    Tarif Lebih dari 10 Jam (flat)
+                </label>
+
+                <input
+                    type="number"
+                    name="tarif_lebih_10_jam"
+                    placeholder="Contoh: 15000"
+                    min="0"
+                    required
+                >
+
+            </div>
+
+
+            <!-- TARIF 24 JAM -->
+
+            <div class="form-group">
+
+                <label>
+                    Tarif per 24 Jam
+                </label>
+
+                <input
+                    type="number"
+                    name="tarif_24_jam"
+                    placeholder="Contoh: 25000"
                     min="0"
                     required
                 >

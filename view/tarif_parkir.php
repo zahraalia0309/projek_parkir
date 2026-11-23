@@ -140,6 +140,8 @@ while ($row = mysqli_fetch_assoc($query)) {
                         <th>No</th>
                         <th>Jenis Kendaraan</th>
                         <th>Tarif Per Jam</th>
+                        <th>Lebih dari 10 Jam</th>
+                        <th>Per 24 Jam</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -181,6 +183,18 @@ while ($row = mysqli_fetch_assoc($query)) {
                             </td>
 
                             <td>
+                                <span class="price">
+                                    Rp <?= number_format($tarif['tarif_lebih_10_jam'] ?? 0, 0, ',', '.'); ?>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="price">
+                                    Rp <?= number_format($tarif['tarif_24_jam'] ?? 0, 0, ',', '.'); ?>
+                                </span>
+                            </td>
+
+                            <td>
 
                                 <a href="edit_tarif.php?id_tarif=<?= $tarif['id_tarif']; ?>" class="edit">
                                                                                Edit
@@ -201,7 +215,7 @@ while ($row = mysqli_fetch_assoc($query)) {
 
                     <tr>
 
-                        <td colspan="4" class="empty">
+                        <td colspan="6" class="empty">
                             Belum ada data tarif parkir.
                         </td>
 

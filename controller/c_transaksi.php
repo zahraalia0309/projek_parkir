@@ -1,7 +1,7 @@
-
 <?php
 
 include "../model/m_koneksi.php";
+include "../model/m_tarif.php";
 
 
 /* =====================================================
@@ -268,7 +268,9 @@ elseif (
                 t.id_area,
                 t.waktu_masuk,
                 t.status,
-                tr.tarif_per_jam
+                tr.tarif_per_jam,
+                tr.tarif_lebih_10_jam,
+                tr.tarif_24_jam
              FROM tb_transaksi t
              LEFT JOIN tb_tarif tr
                 ON t.id_tarif = tr.id_tarif
@@ -334,7 +336,13 @@ elseif (
 
 
         // HITUNG TOTAL BIAYA
-        $biaya_total = $durasi_jam * $tarif_per_jam;
+        // Aturan: per jam, flat kalau lebih dari 10 jam, flat per 24 jam
+        $biaya_total = hitung_biaya_parkir(
+            $durasi_jam,
+            $tarif_per_jam,
+            intval($transaksi['tarif_lebih_10_jam']),
+            intval($transaksi['tarif_24_jam'])
+        );
 
 
         // SELESAIKAN TRANSAKSI
