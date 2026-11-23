@@ -123,7 +123,7 @@ $total_struk = mysqli_fetch_assoc($query_struk)['total'];
 
 
         <a
-            href="dashboard_petugas.php"
+            href="dasboard_petugas.php"
             class="active"
         >
 

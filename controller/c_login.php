@@ -118,7 +118,7 @@ if (isset($_POST['login'])) {
 
     } elseif ($role === 'owner') {
 
-        header("Location: ../view/dashboard_owner.php");
+        header("Location: ../view/dasboard_owner.php");
         exit;
     }
 
@@ -128,4 +128,4 @@ if (isset($_POST['login'])) {
     exit;
 }
 ?>
-```
+

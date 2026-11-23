@@ -33,7 +33,7 @@ CREATE TABLE `tb_area_parkir` (
   `kapasitas` int NOT NULL,
   `terisi` int DEFAULT '0',
   `status_area` enum('aktif','nonaktif') NOT NULL DEFAULT 'aktif'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_area_parkir`
@@ -65,7 +65,7 @@ CREATE TABLE `tb_kendaraan` (
   `pemilik` varchar(100) NOT NULL,
   `id_user` int NOT NULL,
   `status_kendaraan` enum('aktif','nonaktif') NOT NULL DEFAULT 'aktif'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_kendaraan`
@@ -94,7 +94,7 @@ CREATE TABLE `tb_log_aktivitas` (
   `id_user` int DEFAULT NULL,
   `aktivitas` varchar(100) NOT NULL,
   `waktu_aktivitas` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_log_aktivitas`
@@ -141,7 +141,7 @@ CREATE TABLE `tb_tarif` (
   `id_tarif` int NOT NULL,
   `jenis_kendaraan` enum('motor','mobil','lainnya') NOT NULL,
   `tarif_per_jam` decimal(10,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_tarif`
@@ -168,7 +168,7 @@ CREATE TABLE `tb_transaksi` (
   `status` enum('masuk','keluar') DEFAULT 'masuk',
   `id_user` int DEFAULT NULL,
   `id_area` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_transaksi`
@@ -213,9 +213,9 @@ CREATE TABLE `tb_user` (
   `nama_lengkap` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `role` enum('admin','petugas','owner') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `role` enum('admin','petugas','owner') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `status_aktif` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_user`
